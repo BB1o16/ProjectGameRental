@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #003366;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.peanutbutterdawg.gamerental.HomeViewController">
+   <children>
+      <AnchorPane layoutX="3.0" layoutY="14.0" prefHeight="81.0" prefWidth="800.0" style="-fx-background-color: #003366;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Button layoutX="662.0" layoutY="39.0" mnemonicParsing="false" onAction="#getLogout" style="-fx-background-color: transparent;" text="LOGOUT" textFill="WHITE" underline="true" />
+            <Label layoutX="662.0" layoutY="12.0" prefHeight="31.0" prefWidth="44.0" text="Hello, " textFill="WHITE" />
+            <Label fx:id="name" layoutX="710.0" layoutY="17.0" prefHeight="21.0" prefWidth="83.0" text="----" textFill="WHITE" />
+            <AnchorPane fx:id="getAdminTab" layoutX="322.0" layoutY="28.0" prefHeight="12.0" prefWidth="106.0" visible="false">
+               <children>
+                  <Label onMouseClicked="#getAdmin" text=" | ADMIN" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="getHome" layoutY="81.0" prefHeight="523.0" prefWidth="800.0" style="-fx-background-color: #00264d;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="81.0">
+               <children>
+                  <Label layoutX="363.0" layoutY="4.0" text="Top Games" textFill="WHITE" AnchorPane.leftAnchor="363.0" AnchorPane.topAnchor="4.0" />
+                  <FlowPane layoutX="25.0" layoutY="25.0" orientation="VERTICAL" prefHeight="186.0" prefWidth="675.0" style="-fx-background-color: #003366;" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="30.0">
+                     <children>
+                        <ImageView fitHeight="250.0" fitWidth="250.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@../../../img/Skyrim.jpg" />
+                           </image></ImageView>
+                        <ImageView fitHeight="250.0" fitWidth="250.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@../../../img/MonsterHunter.jpg" />
+                           </image></ImageView>
+                        <ImageView fitHeight="250.0" fitWidth="250.0" layoutX="235.0" layoutY="10.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@../../../img/battlefieldV.jpg" />
+                           </image></ImageView>
+                     </children>
+                  </FlowPane>
+                  <TextField fx:id="searchBar" layoutX="575.0" layoutY="294.0" prefHeight="31.0" prefWidth="200.0" promptText="Search Games" />
+                  <TableView fx:id="tableGamesTab" layoutX="14.0" layoutY="293.0" prefHeight="200.0" prefWidth="500.0" style="-fx-background-color: #003366;" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0">
+                     <columns>
+                        <TableColumn fx:id="titleColumn2" prefWidth="179.0" text="Title" />
+                        <TableColumn fx:id="genreColumn2" prefWidth="88.0" text="Genre" />
+                        <TableColumn fx:id="ratingColumn2" prefWidth="113.0" text="Rating" />
+                        <TableColumn fx:id="esrbColumn2" prefWidth="118.0" text="ESRB" />
+                     </columns>
+                  </TableView>
+                  <Button fx:id="setFilter" layoutX="709.0" layoutY="428.0" mnemonicParsing="false" onAction="#getSearch" style="-fx-background-color: #00264d;" text="Search" textFill="WHITE" />
+                  <Button layoutX="637.0" layoutY="472.0" mnemonicParsing="false" onAction="#addGame" style="-fx-background-color: #00264d;" text="Add Game" textFill="WHITE" />
+                  <ComboBox fx:id="getGenre" layoutX="575.0" layoutY="338.0" prefHeight="31.0" prefWidth="200.0" promptText="Genre" />
+                  <Label fx:id="addedGame" layoutX="534.0" layoutY="455.0" prefHeight="17.0" prefWidth="229.0" textFill="WHITE" />
+                  <ComboBox fx:id="getESRB" layoutX="575.0" layoutY="381.0" prefHeight="27.0" prefWidth="200.0" promptText="ESRB" />
+                  <Button fx:id="resetTableButton" layoutX="568.0" layoutY="427.0" mnemonicParsing="false" onAction="#resetTableView" style="-fx-background-color: #00264d;" text="Reset Table" textFill="WHITE" />
+               </children>
+            </AnchorPane>
+            <Button alignment="CENTER" layoutX="14.0" layoutY="12.0" mnemonicParsing="false" onAction="#getHome" prefHeight="53.0" prefWidth="127.0" style="-fx-border-color: transparent; -fx-background-color: #00264d;" text="GAMES" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Button>
+            <Button alignment="CENTER" layoutX="141.0" layoutY="12.0" mnemonicParsing="false" onAction="#getLibrary" prefHeight="53.0" prefWidth="145.0" style="-fx-border-color: transparent; -fx-background-color: transparent;" text="LIBRARY" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Button>
+            <Button alignment="CENTER" layoutX="286.0" layoutY="12.0" mnemonicParsing="false" onAction="#getProfile" prefHeight="53.0" prefWidth="145.0" style="-fx-border-color: transparent; -fx-background-color: transparent;" text="PROFILE" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Button>
+            <Button fx:id="admin" alignment="CENTER" layoutX="431.0" layoutY="12.0" mnemonicParsing="false" onAction="#getAdmin" prefHeight="53.0" prefWidth="145.0" style="-fx-border-color: transparent; -fx-background-color: transparent;" text="ADMIN" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
